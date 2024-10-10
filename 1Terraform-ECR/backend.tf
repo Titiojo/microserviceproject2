@@ -7,17 +7,16 @@ terraform {
     }
 
   }
+  
+ backend "s3" {
 
-
-
-  backend "s3" {
-
-    bucket  = "laflortfstate"    //manually created 
+    bucket  = "newprojectt"    //manually created 
     key     = "ecr/terraform.tfstate"
-    region  = "us-west-2"
+    region  = "us-east-1"
     encrypt = true
 
- 
+    # dynamodb_table = "Terraform_lock"   //manually created 
+
   }
 
 }
